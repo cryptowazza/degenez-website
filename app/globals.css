@@ -1,0 +1,71 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'IBM Plex Sans', sans-serif;
+
+  --color-bg: #071018;
+  --color-bg-deep: #02070d;
+  --color-surface-base: #08111a;
+  --color-surface-header: #0a121c;
+  --color-surface-card: #0c1621;
+  --color-surface-elevated: #12202f;
+  --color-text-main: #f3f8ff;
+  --color-text-subtle: #a6bddb;
+  --color-text-muted: #7d93b5;
+  --color-accent-cyan: #62ebde;
+  --color-accent-magenta: #f16bb7;
+  --color-accent-amber: #ffb85c;
+  --color-cyan-ink: #082427;
+}
+
+:root {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+html {
+  background: var(--color-bg-deep);
+}
+
+body {
+  min-height: 100vh;
+  background: transparent;
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:not(:disabled),
+a {
+  cursor: pointer;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--color-accent-cyan) 24%, transparent);
+  color: white;
+}
+
+section[id] {
+  scroll-margin-top: 7.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

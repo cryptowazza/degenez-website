@@ -1,0 +1,10 @@
+.env
+node_modules
+.next
+.DS_Store
+.build_output.txt
+
+**pnpm-store**
+
+*.tsbuildinfo
+next-env.d.ts
