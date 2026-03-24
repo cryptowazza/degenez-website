@@ -120,15 +120,17 @@ export function Hero() {
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </a>
             </motion.div>
-            <motion.div whileHover={reduceMotion ? undefined : { y: -2 }} whileTap={reduceMotion ? undefined : { scale: 0.99 }}>
-              <a
-                href={siteConfig.ctas.seekerDownload}
-                target="_blank"
-                rel={siteConfig.externalRel}
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/12 bg-white/6 px-6 py-3 text-sm font-medium text-white shadow-[0_10px_32px_rgba(2,7,13,0.34)] backdrop-blur-xl transition hover:border-[color:color-mix(in_srgb,var(--color-accent-magenta)_28%,white_18%)] hover:bg-white/9"
+            <motion.div>
+              <button
+                type="button"
+                disabled
+                className="inline-flex min-h-12 flex-col items-center justify-center rounded-full border border-white/12 bg-white/6 px-6 py-2 text-sm font-medium leading-tight text-white shadow-[0_10px_32px_rgba(2,7,13,0.34)] backdrop-blur-xl opacity-90"
               >
-                Download for Solana Seeker
-              </a>
+                <span>Download for Solana Seeker</span>
+                <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-[color:var(--color-text-muted)]">
+                  Coming Soon
+                </span>
+              </button>
             </motion.div>
           </RevealItem>
 
