@@ -20,14 +20,14 @@ export default function PrivacyPolicyPage() {
       </section>
       <section className="mt-8">
         <h2 className="text-base font-semibold text-white">
-          2. Blockchain Data and Subaccounts
+          2. Blockchain Data and Trading Positions
         </h2>
         <p className="mt-3">
           When you connect your wallet, the applications read public data from
           the Solana blockchain. To safely manage your trading positions,
-          DegenEZ tracks your open Drift subaccounts and their associated wallet
+          DegenEZ tracks your open Flash Trade positions and their associated wallet
           public keys. This information is shared server-side via our API solely
-          to prevent subaccount reuse and maintain trading safety constraints.
+          to prevent position reuse and maintain trading safety constraints.
           Blockchains are inherently public; any transactions or public keys you
           use will be visible on-chain.
         </p>
@@ -58,18 +58,18 @@ export default function PrivacyPolicyPage() {
             addresses, in accordance with their own privacy policies.
           </li>
           <li>
-            <strong>Drift & Jupiter Protocols:</strong> Trading and swap actions
-            occur via smart contracts built by Drift Protocol and Jupiter. By
+            <strong>Flash Trade & Jupiter Protocols:</strong> Trading and swap actions
+            occur via smart contracts built by Flash Trade and Jupiter. By
             using DegenEZ, you interact with these protocols directly. We
             encourage you to review their respective documentation and risk
             policies, including{" "}
             <a
-              href={siteConfig.driftDocs.riskSafety}
+              href={siteConfig.flashDocs.marginFramework}
               target="_blank"
               rel={siteConfig.externalRel}
               className="text-accent-cyan underline underline-offset-4 hover:text-white"
             >
-              Drift risk and safety
+              Flash Trade margin framework
             </a>
             .
           </li>

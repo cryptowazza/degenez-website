@@ -81,12 +81,8 @@ export function Hero() {
         <RevealGroup className="relative z-10 max-w-[42rem]">
           <RevealItem>
             <div className="inline-flex items-center gap-2 rounded-full border border-[color:color-mix(in_srgb,var(--color-accent-cyan)_22%,transparent)] bg-[color:color-mix(in_srgb,var(--color-surface-card)_72%,transparent)] px-4 py-2 text-xs font-medium uppercase tracking-[0.28em] text-[color:var(--color-text-subtle)] shadow-[0_12px_40px_rgba(2,7,13,0.36)]">
-              <Image
-                src={siteConfig.driftIconUrl}
-                alt=""
-                width={14}
-                height={14}
-                className="h-3.5 w-3.5"
+              <span
+                className="h-3.5 w-3.5 rounded-full border border-[color:var(--color-accent-cyan)] bg-[radial-gradient(circle_at_35%_35%,#ffffff_0,#8FF3E8_34%,#62EBDE_70%,#1b7d78_100%)]"
                 aria-hidden="true"
               />
               {heroContent.eyebrow}

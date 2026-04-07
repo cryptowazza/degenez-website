@@ -6,9 +6,9 @@ export const siteConfig = {
   name: "DegenEZ",
   title: "DegenEZ | Easy Degen Trading on Solana",
   description:
-    "A sharper way into Solana perps. DegenEZ wraps Drift Protocol in a cleaner, isolated trading experience built for fast conviction and clearer risk separation.",
+    "A sharper way into Solana perps. DegenEZ wraps Flash Trade in a cleaner trading experience built for fast conviction and clearer risk separation.",
   externalRel: "nofollow noopener noreferrer",
-  driftIconUrl: "https://app.drift.trade/assets/icons/driftIcon.svg",
+  flashAppUrl: "https://www.flash.trade/",
   anchors: {
     howItWorks: "how-it-works",
     faq: "faq",
@@ -21,14 +21,17 @@ export const siteConfig = {
     x: "https://x.com/DegenEzApp",
     telegram: "https://t.me/degenez",
   },
-  driftDocs: {
-    riskSafety: "https://docs.drift.trade/protocol/risk-and-safety",
-    fundingRates:
-      "https://docs.drift.trade/protocol/trading/perpetuals-trading/funding-rates",
-    liquidations: "https://docs.drift.trade/protocol/trading/liquidations",
-    subaccounts: "https://docs.drift.trade/getting-started/managing-subaccount",
-    withdrawClose:
-      "https://docs.drift.trade/protocol/getting-started/withdraw-and-close-account",
+  flashDocs: {
+    firstTrade:
+      "https://docs.flash.trade/flash-trade/getting-started/making-your-first-trade",
+    fees: "https://docs.flash.trade/flash-trade/flash-trade-protocol/perpetuals-specifications/fees",
+    liquidation:
+      "https://docs.flash.trade/flash-trade/flash-trade-protocol/perpetuals-specifications/liquidation",
+    marginFramework:
+      "https://docs.flash.trade/flash-trade/flash-trade-protocol/perpetuals-specifications/margin-framework",
+    pricingEngine:
+      "https://docs.flash.trade/flash-trade/flash-trade-protocol/technical-architecture/pricing-engine",
+    audits: "https://docs.flash.trade/flash-trade/resources/security",
   },
 } as const;
 
@@ -46,10 +49,10 @@ export const navItems = [
 ] as const;
 
 export const heroContent = {
-  eyebrow: "Powered by Drift Protocol",
+  eyebrow: "Powered by Flash Trade",
   title: "Degen trading made easy.",
   description:
-    "DegenEZ rides on top of Drift Protocol so trades settle into a battle-tested Solana perp stack. The result is fast execution, transparent custody, and the liquidity depth serious leverage trading needs.",
+    "DegenEZ rides on top of Flash Trade so trades settle into a battle-tested Solana perp stack. The result is fast execution, transparent custody, and the liquidity depth serious leverage trading needs.",
   subcopy:
     "Open isolated positions without dragging every trade into the same risk bucket. Stay sharp, size quickly, and manage more than one conviction at a time.",
 } as const;
@@ -68,7 +71,7 @@ export const howItWorksFeatures: Feature[] = [
   },
   {
     title: "Every position stays isolated",
-    copy: "Each trade lives in its own subaccount, so one idea doesn’t affect another. Risk stays crystal clear when rotating fast.",
+    copy: "Each trade gets a focused position flow, so one idea doesn’t blur into another. Risk stays crystal clear when rotating fast.",
     icon: ShieldCheck,
   },
   {
@@ -97,19 +100,37 @@ export const faqItems: FaqItem[] = [
     answer: (
       <>
         <p>
-          DegenEZ is powered by Drift Protocol, so positions are not trapped
+          DegenEZ is powered by Flash Trade, so positions are not trapped
           inside a private black box. You can inspect and manage those positions
-          directly in Drift as well.
+          directly in Flash Trade as well.
         </p>
         <p>
-          For protocol-level risk details, read{" "}
+          For protocol-level risk details, read Flash Trade&apos;s{" "}
           <a
             className={linkClass}
-            href={siteConfig.driftDocs.riskSafety}
+            href={siteConfig.flashDocs.marginFramework}
             target="_blank"
             rel={siteConfig.externalRel}
           >
-            Drift risk and safety
+            margin framework
+          </a>
+          ,{" "}
+          <a
+            className={linkClass}
+            href={siteConfig.flashDocs.pricingEngine}
+            target="_blank"
+            rel={siteConfig.externalRel}
+          >
+            pricing engine
+          </a>
+          , and{" "}
+          <a
+            className={linkClass}
+            href={siteConfig.flashDocs.audits}
+            target="_blank"
+            rel={siteConfig.externalRel}
+          >
+            audits
           </a>
           .
         </p>
@@ -122,13 +143,12 @@ export const faqItems: FaqItem[] = [
       <>
         <p>
           That is a consequence of how perpetuals trading works on-chain and how
-          DegenEZ uses subaccounts for true isolated positions.
+          DegenEZ keeps each trade flow focused for clearer position management.
         </p>
         <p>
-          Opening a trade can involve creating a subaccount, depositing SOL as
-          collateral, and then opening the position. Closing can require
-          unwinding the position, settling balances, withdrawing remaining
-          funds, and closing the account cleanly.
+          Opening a trade can involve wallet approvals for collateral,
+          position setup, and trade execution. Closing can require unwinding the
+          position, settling balances, and confirming the final on-chain state.
         </p>
       </>
     ),
@@ -139,7 +159,7 @@ export const faqItems: FaqItem[] = [
     answer: (
       <>
         <p>
-          In rare cases the DegenEZ interface may lose track of the subaccount
+          In rare cases the DegenEZ interface may lose track of the position
           state before the full closeout flow has finished, but that does not
           mean funds are gone.
         </p>
@@ -147,14 +167,14 @@ export const faqItems: FaqItem[] = [
           You can go to{" "}
           <a
             className={linkClass}
-            href="https://app.drift.trade"
+            href={siteConfig.flashAppUrl}
             target="_blank"
             rel={siteConfig.externalRel}
           >
-            app.drift.trade
+            flash.trade
           </a>{" "}
-          to manage the position directly, settle balances, and withdraw from
-          the relevant account.
+          to manage the position directly, settle balances, and review the
+          relevant wallet state.
         </p>
       </>
     ),
@@ -165,20 +185,29 @@ export const faqItems: FaqItem[] = [
       <>
         <p>
           Perp positions move with price, funding, and account health. That
-          means your effective leverage and collateral profile can drift even
+          means your effective leverage and collateral profile can shift even
           when you have not touched the position.
         </p>
         <p>
-          Drift explains this in more detail in their docs on{" "}
+          Flash Trade explains this in more detail in their docs on{" "}
           <a
             className={linkClass}
-            href={siteConfig.driftDocs.fundingRates}
+            href={siteConfig.flashDocs.fees}
             target="_blank"
             rel={siteConfig.externalRel}
           >
-            funding rates
+            fees
           </a>{" "}
-          and liquidation mechanics.
+          and its{" "}
+          <a
+            className={linkClass}
+            href={siteConfig.flashDocs.marginFramework}
+            target="_blank"
+            rel={siteConfig.externalRel}
+          >
+            margin framework
+          </a>
+          .
         </p>
       </>
     ),
@@ -189,36 +218,36 @@ export const faqItems: FaqItem[] = [
       <>
         <p>
           Most of the value may be gone after liquidation, but there can still
-          be leftover balance in the subaccount.
+          be leftover balance tied to your wallet or position.
         </p>
         <p>
-          Check the account on{" "}
+          Check the position on{" "}
           <a
             className={linkClass}
-            href="https://app.drift.trade"
+            href={siteConfig.flashAppUrl}
             target="_blank"
             rel={siteConfig.externalRel}
           >
-            app.drift.trade
+            flash.trade
           </a>{" "}
-          and close it properly to recover anything that remains. Drift’s
+          and close it properly to recover anything that remains. Flash Trade&apos;s
           documentation on{" "}
           <a
             className={linkClass}
-            href={siteConfig.driftDocs.liquidations}
+            href={siteConfig.flashDocs.liquidation}
             target="_blank"
             rel={siteConfig.externalRel}
           >
-            liquidations
+            liquidation
           </a>{" "}
           and{" "}
           <a
             className={linkClass}
-            href={siteConfig.driftDocs.withdrawClose}
+            href={siteConfig.flashDocs.firstTrade}
             target="_blank"
             rel={siteConfig.externalRel}
           >
-            withdrawing and closing accounts
+            managing trades
           </a>{" "}
           covers the mechanics.
         </p>

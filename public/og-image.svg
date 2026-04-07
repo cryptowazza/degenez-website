@@ -8,5 +8,5 @@
   <rect width="1200" height="630" fill="url(#bg)"/>
   <text x="600" y="280" font-family="IBM Plex Sans, sans-serif" font-size="72" font-weight="600" fill="#f3f8ff" text-anchor="middle">DegenEZ</text>
   <text x="600" y="360" font-family="IBM Plex Sans, sans-serif" font-size="32" fill="#a6bddb" text-anchor="middle">Easy Degen Trading on Solana</text>
-  <text x="600" y="420" font-family="IBM Plex Sans, sans-serif" font-size="24" fill="#62ebde" text-anchor="middle">Powered by Drift Protocol</text>
+  <text x="600" y="420" font-family="IBM Plex Sans, sans-serif" font-size="24" fill="#62ebde" text-anchor="middle">Powered by Flash Trade</text>
 </svg>
