@@ -82,7 +82,7 @@ export function Hero() {
           <RevealItem>
             <div className="inline-flex items-center gap-2 rounded-full border border-[color:color-mix(in_srgb,var(--color-accent-cyan)_22%,transparent)] bg-[color:color-mix(in_srgb,var(--color-surface-card)_72%,transparent)] px-4 py-2 text-xs font-medium uppercase tracking-[0.28em] text-[color:var(--color-text-subtle)] shadow-[0_12px_40px_rgba(2,7,13,0.36)]">
               <Image
-                src="https://www.flash.trade/logo/logo.webp"
+                src="/flash-symbol.png"
                 alt=""
                 width={18}
                 height={18}
