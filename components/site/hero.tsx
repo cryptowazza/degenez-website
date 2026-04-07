@@ -82,11 +82,11 @@ export function Hero() {
           <RevealItem>
             <div className="inline-flex items-center gap-2 rounded-full border border-[color:color-mix(in_srgb,var(--color-accent-cyan)_22%,transparent)] bg-[color:color-mix(in_srgb,var(--color-surface-card)_72%,transparent)] px-4 py-2 text-xs font-medium uppercase tracking-[0.28em] text-[color:var(--color-text-subtle)] shadow-[0_12px_40px_rgba(2,7,13,0.36)]">
               <Image
-                src={siteConfig.driftIconUrl}
+                src="/flash-symbol.png"
                 alt=""
-                width={14}
-                height={14}
-                className="h-3.5 w-3.5"
+                width={18}
+                height={18}
+                className="h-4 w-4 object-contain"
                 aria-hidden="true"
               />
               {heroContent.eyebrow}

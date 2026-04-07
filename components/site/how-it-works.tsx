@@ -17,10 +17,10 @@ export function HowItWorksSection() {
             </h2>
             <p className="mt-6 max-w-140 text-lg leading-[1.8] text-text-subtle">
               DegenEZ is a web and Solana Seeker mobile app built as a clean
-              wrapper on top of Drift Protocol. The execution and security layer
-              is fully managed by Drift, so you get proven on-chain reliability
-              and full transparency — all positions are viewable on Drift. We
-              just simplify the interface so trading feels effortless.
+              wrapper on top of Flash Trade. The execution and security layer
+              is managed by Flash Trade, so you get on-chain reliability and
+              transparent position management. We just simplify the interface so
+              trading feels effortless.
             </p>
           </div>
 

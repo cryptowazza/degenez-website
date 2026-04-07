@@ -1,7 +1,7 @@
 {
   "name": "DegenEZ - Easy Degen Trading on Solana",
   "short_name": "DegenEZ",
-  "description": "A sharper way into Solana perps. DegenEZ wraps Drift Protocol in a cleaner, isolated trading experience built for fast conviction and clearer risk separation.",
+  "description": "A sharper way into Solana perps. DegenEZ wraps Flash Trade in a cleaner trading experience built for fast conviction and clearer risk separation.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#071018",

@@ -12,7 +12,7 @@ export default function TermsOfUsePage() {
           1. Interface to Decentralized Protocols
         </h2>
         <p className="mt-3">
-          DegenEZ provides a front-end interface (the &quot;Interface&quot;) that facilitates interaction with decentralized protocols on the Solana blockchain, specifically the Drift Protocol and Jupiter. DegenEZ does not have access to your funds, does not hold custody of your assets, and does not execute trades on your behalf. All transactions are initiated by your self-custodial wallet and executed directly by independent smart contracts.
+          DegenEZ provides a front-end interface (the &quot;Interface&quot;) that facilitates interaction with decentralized protocols on the Solana blockchain, specifically Flash Trade and Jupiter. DegenEZ does not have access to your funds, does not hold custody of your assets, and does not execute trades on your behalf. All transactions are initiated by your self-custodial wallet and executed directly by independent smart contracts.
         </p>
       </section>
       <section className="mt-8">
@@ -20,14 +20,14 @@ export default function TermsOfUsePage() {
           2. Assumption of Risk
         </h2>
         <p className="mt-3">
-          Trading digital assets, particularly highly leveraged perpetual futures, involves substantial risk of loss. You are solely responsible for understanding the mechanics of leverage, liquidations, funding rates, and isolated margin subaccounts. We strongly encourage reviewing the{" "}
+          Trading digital assets, particularly highly leveraged perpetual futures, involves substantial risk of loss. You are solely responsible for understanding the mechanics of leverage, liquidations, fees, and margin requirements. We strongly encourage reviewing the{" "}
           <a
-            href={siteConfig.driftDocs.riskSafety}
+            href={siteConfig.flashDocs.marginFramework}
             target="_blank"
             rel={siteConfig.externalRel}
             className="text-accent-cyan underline underline-offset-4 hover:text-white"
           >
-            Drift risk and safety documentation
+            Flash Trade margin framework
           </a>{" "}
           before trading. By using the Interface, you acknowledge and assume all risks associated with on-chain trading and smart contract vulnerabilities.
         </p>
